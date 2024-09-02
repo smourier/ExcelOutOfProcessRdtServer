@@ -1,5 +1,5 @@
 # ExcelOutOfProcessRdtServer
-An Excel out-of-process Real-Rime Data (RDT) server written in .NET Core.
+An Excel out-of-process Real-Rime Data (RDT) server written in .NET Core 8.
 
 ![image](https://github.com/user-attachments/assets/ac979729-5562-4c71-b48b-e53b74c2a33a)
 
