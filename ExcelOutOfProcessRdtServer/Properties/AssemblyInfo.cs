@@ -11,7 +11,7 @@ using System.Windows;
 
 [assembly: AssemblyTitle("ExcelOutOfProcessRdtServer")]
 [assembly: AssemblyProduct("ExcelOutOfProcessRdtServer")]
-[assembly: AssemblyCopyright("Copyright (C) 2023-2024 Simon Mourier. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright (C) 2023-2025 Simon Mourier. All rights reserved.")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyDescription("An Excel out-of-process Real-Rime Data (RDT) server written in .NET Core.")]
 [assembly: AssemblyCompany("Simon Mourier")]
