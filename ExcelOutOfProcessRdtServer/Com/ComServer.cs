@@ -16,10 +16,7 @@ public sealed partial class ComServer : IDisposable
         if (!_factories.TryGetValue(typeof(T), out var factory))
         {
             createInstance ??= () => new T();
-            var instance = createInstance();
-            if (instance == null)
-                throw new InvalidOperationException();
-
+            var instance = createInstance() ?? throw new InvalidOperationException();
             factory = new ComClassFactory(instance);
             _factories[typeof(T)] = factory;
         }
@@ -41,7 +38,6 @@ public sealed partial class ComServer : IDisposable
     public static void Register(RegistryKey rootKey, Guid clsid, string? progId = null, string? exePath = null)
     {
         ArgumentNullException.ThrowIfNull(rootKey);
-        ArgumentNullException.ThrowIfNull(clsid);
         if (!string.IsNullOrEmpty(progId))
         {
             using var progidKey = rootKey.CreateSubKey($"Software\\Classes\\{progId}\\CLSID");
@@ -64,7 +60,6 @@ public sealed partial class ComServer : IDisposable
     public static void Unregister(RegistryKey rootKey, Guid clsid, string? progId = null)
     {
         ArgumentNullException.ThrowIfNull(rootKey);
-        ArgumentNullException.ThrowIfNull(clsid);
         rootKey.DeleteSubKeyTree($"Software\\Classes\\CLSID\\{clsid:B}", false);
         if (!string.IsNullOrEmpty(progId))
         {

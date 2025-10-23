@@ -33,7 +33,7 @@ public partial class MainWindow : Window
             else
             {
                 _comServer = new ComServer();
-                _comServer.RegisterClassObject<RtdServer>(createInstance: () =>
+                _comServer.RegisterClassObject(createInstance: () =>
                 {
                     _server = new RtdServer();
                     _server.Information += OnServerInformation;
